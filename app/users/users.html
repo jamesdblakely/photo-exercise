@@ -1,0 +1,19 @@
+<div ng-controller="UsersCtrl as Users" class="container">
+
+    <div ng-repeat="User in Users.appUsers" class="row">
+
+        <a href="" ng-click="Users.openAlbums(User.id)" ng-bind="::User.name"></a>
+
+    </div>
+    <div>
+        <div ng-repeat="Album in Users.userAlbums" class="row">
+            <ul class="list-group">
+                <li class="sm-col-4">
+                    <image ng-src="{{Album.data[0].thumbnailUrl}}" height="150px" width="150px"></image>
+                </li>
+                <li ng-bind="Album.data[0].title" class="sm-col-8">
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
